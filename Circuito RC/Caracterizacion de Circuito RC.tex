@@ -100,21 +100,23 @@ Los capacitores son componentes eléctricos con diversas y variadas aplicaciones
 \begin{multicols}{2}
 \section{Introducción}
 
+\subsection{¿Qué es un capacitor?}
+
 Un capacitor o condensador es un dispositivo que permite almacenar energía debido a que puede generar una diferencia de potencial entre dos placas conductoras paralelas que posee en su interior. Al cargarlas en igual magnitud, pero cada una con signo opuesto, se genera un campo eléctrico y por ende una diferencia de potencial entre ellas. Dichas placas vienen separadas por un aislante o simplemente el vacío para evitar la transferencia de carga entre ellas.
 
 \vspace{0.2cm}
 
 A partir de esto se puede definir la Capacitancia ($C$) como la capacidad de un componente o circuito para recoger y almacenar energía en forma de carga eléctrica ($Q$). Su unidad de medida es el Faradio ($F$). La diferencia de potencial de un capacitor viene dada por:
-
 \begin{equation}
 V=\dfrac{Q}{C}
 \end{equation}
+\subsection{Capacitores en serie y en paralelo}
 
 Al conectar un capacitor a una fuente o batería, este se cargará hasta que sus placas adquieran la misma diferencia de potencial entre ellas que el que genera la fuente. En el caso de un circuito sencillo con $n$ capacitores en serie, la suma de sus respectivas diferencias de potencial será igual a la diferencia de potencial de la fuente. De esto se deduce que la capacitancia equivalente del circuito es:
 \begin{equation}
 C_{eq}=\left(\dfrac{1}{C_1}+\dfrac{1}{C_2}+\dots+\dfrac{1}{C_n}\right)^{-1}
 \end{equation}
-Así mismo se tendrá que la carga en cada uno de los $n$ capacitores en serie sera la misma, al igual que la carga considerada para el capacitor equivalente, es decir:
+Esto porque la carga en cada uno de los $n$ capacitores en serie sera la misma, al igual que la carga considerada para el capacitor equivalente, es decir:
 \begin{equation}
 Q_{total}=Q_1=Q_2=\dots=Q_n
 \end{equation}
@@ -124,22 +126,63 @@ C_{eq}=C_1+C_2+\dots+C_n
 \end{equation}
 Para descargar el capacitor basta con apagar la fuente del circuito. En seguida, las cargas se empezarán a redistribuir buscando el equilibrio electrostático.
 
-\vspace{0.3cm}
+\subsection{Carga y descarga del circuito RC}
 
-Ahora, considérese un circuito RC simple como el mostrado en la figura 1. Teóricamente se tiene que el voltaje respecto al tiempo cuando un capacitor está en proceso de carga es:
+\begin{figure}[H]
+\centering
+\resizebox{6cm}{3cm}{	
+	\begin{tikzpicture}
+		\draw [scale=1] (0,-0.05)--(0,-1)--(3,-1)--(3,-0.5)--(3.1,-0.4)--(2.9,-0.3)--(3.1,-0.2)--(2.9,-0.1)--(3.1,0)--(2.9,0.1)--(3.1,0.2)--(2.9,0.3)--(3.1,0.4)--(3,0.5)--(3,1)--(1.55,1);
+		\draw [scale=1] (0,0.05)--(0,1)--(1.45,1);
+		%Bateria
+		\draw [thick, scale=1] (-0.25,-0.05)--(0.25,-0.05);
+		\draw [thick, scale=1](-0.2,0.05)--(0.2,0.05);
+		%Capacitor
+		\draw [thick, scale=1](1.55,1.2)--(1.55,0.8);
+		\draw [thick, scale=1](1.45,1.2)--(1.45,0.8);
+		
+		\draw [scale=1](-0.3,0) node[left]{$V_0$};
+		\draw [scale=1](1.5,1.3) node[above]{$C$};
+		\draw [scale=1](3.3,0) node[right]{$R$};
+		\draw [scale=1](0.4,-0.08)node[right]{$+$};
+		\draw [scale=1](0.4,0.08)node[right]{$-$};
+	\end{tikzpicture}
+}
+\caption{Circuito RC básico en proceso de carga}
+\label{RCcarga}
+\end{figure}
+
+Ahora consideremos el proceso de carga de un circuito RC como el de la figura 1, por suma de diferencias de potencial en un camino cerrado sabemos que, para una fuente de voltaje $V_0$, resistencia $R$ y capacitancia $C$ se tiene: 
+
+$$IR+\dfrac{q}{C}-V_0=0$$
+$$\text{Puesto que } I=\dfrac{dq}{dt} \text{, entonces}$$
+$$RC\dfrac{dq}{dt}=CV_0-q$$
+$$\int_0^{q(t)}\dfrac{dq}{q-CV_0}=\int_0^t\dfrac{-dt}{RC}$$
+$$ln(q-CV_0)|_0^{q(t)}=-\dfrac{t}{RC}$$
+$$ln\left(\dfrac{q(t)-CV_0}{-CV_0}\right)=-\dfrac{t}{RC}$$
+$$\dfrac{q(t)-CV_0}{-CV_0}=e^{-\frac{t}{RC}}$$
+$$q(t)=CV_0\left(-e^{-\frac{t}{RC}}\right)$$
+$$\text{Puesto que } V=\dfrac{q}{C} \text{ en el capacitor se tiene que:}$$ 
 \begin{equation}
 V(t)=V_0\left(1-e^{-\frac{t}{RC}}\right)
 \end{equation}
-Y cuando está en proceso de descarga es:
+
+Lo cual es el voltaje en el capacitor en funcion del tiempo
+
+\vspace{0.3cm}
+
+Una vez ha pasado un tiempo lo suficientemente largo, lo suficiente para considerar que el capacitor tiene una diferencia de potencial $V_0$ y quitamos la fuente del circuito en la figura 1 tendremos un circuito formado exclusivamente por resistencia y capacitor, lo cual generará la descarga del capacitor dada por:
+
+$$\dfrac{dq}{dt}R+\dfrac{q}{c}=0$$
+$$\dfrac{dq}{dt}=-\dfrac{q}{RC}$$
+$$\int_{CV_0}^{q(t)}\dfrac{dq}{q}=\int_0^t\dfrac{dt}{RC}$$
+$$ln\left(\dfrac{q(t)}{CV_0}\right)=-\dfrac{t}{RC}$$ 
+$$\dfrac{q(t)}{C}=V_0e^{-\frac{t}{RC}}$$
 \begin{equation}
 V(t)=V_0e^{-\frac{t}{RC}}
 \end{equation}
 
-\vspace{0.3cm}
-
-Donde $V_0$ en cada ecuación es el voltaje de la fuente o la carga en $t=0$ del capacitor y R el valor de la resistencia.
-
-\vspace{0.2cm}
+\subsection{El tiempo característico $\tau$ }
 
 El denominado Tiempo Característico del Circuito $\tau$ es importante para determinar que tan rápido se carga y descarga un capacitor en un circuito RC en comparación a otros con determinada resistencia R. Este se define como:
 \begin{equation}
@@ -149,38 +192,6 @@ Es decir que cuando ha pasado el tiempo $\tau$ en el circuito RC en descarga, el
 \begin{equation}
 V(\tau)=\dfrac{V_0}{e}
 \end{equation}
-
-\begin{figure}[H]
-\centering
-\resizebox{4cm}{2cm}{	
-	\begin{tikzpicture}
-		\draw [scale=1] (0,-0.05)--(0,-1)--(1.5,-1)--(1.5,-0.5)--(1.6,-0.4)--(1.4,-0.3)--(1.6,-0.2)--(1.4,-0.1)--(1.6,0)--(1.4,0.1)--(1.6,0.2)--(1.4,0.3)--(1.6,0.4)--(1.5,0.5)--(1.5,1)--(1.3,1)--(0.7,1.3);
-		\draw [scale=1] (0,0.05)--(0,1)--(0.7,1);
-		\draw [scale=1] (1.5,1)--(3,1)--(3,0.05);
-		\draw [scale=1] (1.5,-1)--(3,-1)--(3,-0.05);		
-		
-		%Bateria
-		\draw [thick, scale=1] (-0.2,-0.05)--(0.2,-0.05);
-		\draw [thick, scale=1](-0.25,0.05)--(0.25,0.05);
-		%Capacitor
-		\draw [thick, scale=1] (2.8,-0.05)--(3.2,-0.05);
-		\draw [thick, scale=1](2.8,0.05)--(3.2,0.05);
-		
-				
-		\draw [scale=1](-0.3,0) node[left]{$V_0$};
-		\draw [scale=1](3.2,0) node[right]{$C$};
-		\draw [scale=1](1.6,0) node[right]{$R$};
-		\draw [scale=1](0.3,-0.1) node[right]{$-$};
-		\draw [scale=1](0.3,0.1) node[right]{$+$};
-		\draw [scale=1](2.7,-0.1) node[left]{$-$};
-		\draw [scale=1](2.7,0.1) node[left]{$+$};
-	\end{tikzpicture}
-}
-\caption{Circuito RC básico, se carga al cerrar el circuito y se descarga al abrirlo}
-\label{RCcarga}
-\end{figure}
-
-
 
 %-----------------------------------------------------------------------------------------------------
 %-----------------------------------------------------------------------------------------------------

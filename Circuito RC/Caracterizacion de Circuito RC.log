@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  25 MAY 2019 18:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.1)  25 MAY 2019 22:15
 entering extended mode
 **"./Caracterizacion de Circuito RC.tex"
 ("Caracterizacion de Circuito RC.tex"
@@ -875,17 +875,17 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/David/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 []\OT1/cmr/m/n/10 Multme-tro di-gi-tal Ma-nual YF-3503
  []
 
-[2]
-<Circuito.png, id=23, 448.67625pt x 426.09187pt>
+[2] [3]
+<Circuito.png, id=29, 448.67625pt x 426.09187pt>
 File: Circuito.png Graphic file (type png)
 <use Circuito.png>
-Package pdftex.def Info: Circuito.png  used on input line 353.
+Package pdftex.def Info: Circuito.png  used on input line 364.
 (pdftex.def)             Requested size: 179.46732pt x 170.43372pt.
- [3 <./Circuito.png>] [4] ("Caracterizacion de Circuito RC.aux"
+ [4 <./Circuito.png>] ("Caracterizacion de Circuito RC.aux"
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
 )
@@ -894,13 +894,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 25024 strings out of 492945
- 629046 string characters out of 3126253
- 809854 words of memory out of 3000000
- 28474 multiletter control sequences out of 15000+200000
+ 25025 strings out of 492945
+ 629112 string characters out of 3126253
+ 810854 words of memory out of 3000000
+ 28475 multiletter control sequences out of 15000+200000
  12449 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,10n,96p,1040b,846s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,10n,96p,1040b,862s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/David/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmex10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX 2.9/f
@@ -919,7 +919,7 @@ avid/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
 <C:/Users/David/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb><C:/Users/David/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb>
-Output written on "Caracterizacion de Circuito RC.pdf" (4 pages, 183385 bytes).
+Output written on "Caracterizacion de Circuito RC.pdf" (4 pages, 189217 bytes).
 
 PDF statistics:
  79 PDF objects out of 1000 (max. 8388607)
