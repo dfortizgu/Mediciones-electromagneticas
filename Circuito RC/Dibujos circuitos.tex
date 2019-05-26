@@ -1,0 +1,32 @@
+\documentclass[10pt,letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{anysize}
+\usepackage{soul}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{pgfplots}
+\usepackage{multicol}
+
+\begin{document}
+	
+\resizebox{6cm}{3cm}{	
+	\begin{tikzpicture}
+		\draw [scale=1] (0,-0.05)--(0,-1)--(3,-1)--(3,-0.5)--(3.1,-0.4)--(2.9,-0.3)--(3.1,-0.2)--(2.9,-0.1)--(3.1,0)--(2.9,0.1)--(3.1,0.2)--(2.9,0.3)--(3.1,0.4)--(3,0.5)--(3,1)--(1.55,1);
+		\draw [scale=1] (0,0.05)--(0,1)--(1.45,1);
+		%Bateria
+		\draw [thick, scale=1] (-0.2,-0.05)--(0.2,-0.05);
+		\draw [thick, scale=1](-0.25,0.05)--(0.25,0.05);
+		%Capacitor
+		\draw [thick, scale=1](1.55,1.2)--(1.55,0.8);
+		\draw [thick, scale=1](1.45,1.2)--(1.45,0.8);
+		
+		\draw [scale=1](-0.3,0) node[left]{$V_0$};
+		\draw [scale=1](1.5,1.3) node[above]{$C$};
+		\draw [scale=1](3.3,0) node[right]{$R$};
+	\end{tikzpicture}
+}
+\end{document}
